@@ -2,5 +2,5 @@
 
 int main()
 {
-    ft_printf("%s  |  %c   |  %i  |  %% \n ", "moad1337" , 'N', -1234);
+    ft_printf("%s ghd |  %c   |  %i  |  %% \n ", "moad1337" , 'N', -1234);
 }

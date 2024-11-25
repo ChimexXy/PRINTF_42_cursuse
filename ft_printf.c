@@ -33,8 +33,7 @@ int ft_printf(const char *str, ...)
             check(str[i + 1], arg, &i, &ret);
         else
             ft_putchar((char)str[i], &ret);
-        if(*(str + i))
-            i++;
+        i++;
     }
     va_end(arg);
     return (ret);
