@@ -1,6 +1,6 @@
 #include "ft_printf.h"
 
-void check(char t, va_list arg, int *i, int *len)
+static void check(char t, va_list arg, int *len)
 {
     if(t == 'c')
         ft_putchar(va_arg(arg, int), len);
@@ -12,10 +12,10 @@ void check(char t, va_list arg, int *i, int *len)
         ft_putnbr(va_arg(arg, int), len);
 	else if(t == 'u')
 		ft_putnbr(va_arg(arg, unsigned int), len);
+	else if(t == 'x' || t == 'X')
+		ft_puthexa(va_arg(arg, int), t, len);
     else
         ft_putchar(t, len);
-    (*i)++;
-    return;
 }
 
 int ft_printf(const char *str, ...)
@@ -30,7 +30,10 @@ int ft_printf(const char *str, ...)
     while(str[i])
     {
         if(str[i] == '%')
-            check(str[i + 1], arg, &i, &ret);
+		{
+			check(str[i + 1], arg, &ret);
+			i++;
+		}
         else
             ft_putchar((char)str[i], &ret);
         i++;
