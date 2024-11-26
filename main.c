@@ -3,8 +3,6 @@
 
 int main()
 {
-    int i = ft_printf("%s  |  %c   |  %i  |  %%  | %x  | %X  \n", "moad1337" , 'N', -1234, "add", "red");
+    int i = ft_printf("%s  |  %c   |  %i  |  %%  | %x  | %p  \n", "moad1337" , 'N', -1234, "add", "redsfad");
 	printf("%d \n", i);
 }
-// moad1337  |  N   |  -1234  |  %
-// moad1337  |  N   |  -1234  |  % 

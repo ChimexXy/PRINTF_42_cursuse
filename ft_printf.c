@@ -14,6 +14,11 @@ static void check(char t, va_list arg, int *len)
 		ft_putnbr(va_arg(arg, unsigned int), len);
 	else if(t == 'x' || t == 'X')
 		ft_puthexa(va_arg(arg, int), t, len);
+	else if (t == 'p')
+	{
+		ft_putstr("0x", len);
+		ft_puthexa(va_arg(arg, size_t), t, len);
+	}
     else
         ft_putchar(t, len);
 }
@@ -26,6 +31,8 @@ int ft_printf(const char *str, ...)
  
     i = 0;
     ret = 0;
+	if(!str)
+		return (0);
     va_start(arg, str);
     while(str[i])
     {

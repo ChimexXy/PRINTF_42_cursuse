@@ -6,7 +6,7 @@ void ft_puthexa(int num, char t, int *len)
 	char *base;
 
 	n = num;
-	if (t == 'x')
+	if (t == 'x' || t == 'p')
 		base = "0123456789abcdef";
 	else if (t == 'X')
 		base = "0123456789ABCDEF";
