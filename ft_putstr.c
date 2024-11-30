@@ -3,13 +3,16 @@
 void ft_putstr(char *str, int *len)
 {
     if (!str)
-        return;
+	{
+        write(1, "(null)", 6);
+		return;
+	}
     int i;
     i = 0;
     while(str[i])
     {
-        write(1, &str[i], 1);
+        ft_putchar(str[i], len);
         i++;
     }
-    (*len)++;
+    // (*len)++;
 }

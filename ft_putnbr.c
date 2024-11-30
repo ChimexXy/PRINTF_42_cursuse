@@ -17,6 +17,5 @@ void	ft_putnbr(int nb, int *len)
 	}
 	else
 		ft_putchar(nb + 48, len);
-	(*len)++;
 }
 
