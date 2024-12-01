@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/01 15:50:16 by mozahnou          #+#    #+#             */
+/*   Updated: 2024/12/01 21:46:51 by mozahnou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-void ft_putstr(char *str, int *len)
+void	ft_putstr(char *str, int *ret)
 {
-    if (!str)
+	int	i;
+
+	i = 0;
+	if (!str)
 	{
-        write(1, "(null)", 6);
-		return;
+		ft_putstr("(null)", ret);
+		return ;
 	}
-    int i;
-    i = 0;
-    while(str[i])
-    {
-        ft_putchar(str[i], len);
-        i++;
-    }
-    // (*len)++;
+	while (str[i])
+	{
+		ft_putchar(str[i], ret);
+		i++;
+	}
 }
