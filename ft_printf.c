@@ -6,7 +6,7 @@
 /*   By: mozahnou <mozahnou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/01 15:48:01 by mozahnou          #+#    #+#             */
-/*   Updated: 2024/12/01 21:45:58 by mozahnou         ###   ########.fr       */
+/*   Updated: 2024/12/05 01:35:25 by mozahnou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,12 @@ int	ft_printf(const char *str, ...)
 	va_start(arg, str);
 	while (str[i])
 	{
-		if (str[i] == '%')
+		if (str[i] == '%' && str[i + 1])
 		{
 			check(str[i + 1], arg, &ret);
 			i++;
 		}
-		else
+		else if (str[i] != '%')
 			ft_putchar((char)str[i], &ret);
 		i++;
 	}
